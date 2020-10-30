@@ -7,11 +7,12 @@ import { calculateTotal } from '../../../utils/calculateTotal';
 class OrderSummary extends React.Component {
   static propTypes = {
     tripCost: PropTypes.string,
-    options: PropTypes.array,
+    options: PropTypes.object,
   };
 
   render() {
     const { tripCost, options } = this.props;
+    console.log(tripCost);
     return (
       <h2 className={styles.component}>
         Total: <strong>{formatPrice(calculateTotal(tripCost, options))}</strong>
